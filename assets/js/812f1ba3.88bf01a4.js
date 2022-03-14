@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[316],{756:function(a){a.exports=JSON.parse('{"allTagsPath":"/database/blog/tags","slug":"/database/blog/tags/ph-d","name":"PhD","count":1,"permalink":"/database/blog/tags/ph-d"}')}}]);

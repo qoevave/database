@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://your-docusaurus-test-site.com/database/blog</id>
+    <title>QoEVAVE Blog</title>
+    <updated>2021-07-10T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://your-docusaurus-test-site.com/database/blog"/>
+    <subtitle>QoEVAVE Blog</subtitle>
+    <icon>https://your-docusaurus-test-site.com/database/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[New blog test]]></title>
+        <id>/2021/07/10/blogTest</id>
+        <link href="https://your-docusaurus-test-site.com/database/blog/2021/07/10/blogTest"/>
+        <updated>2021-07-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[this is the first test blog post.]]></summary>
+        <content type="html"><![CDATA[<p>Welcome to this blog post.
+This blog is created with Docusaurus.</p><p>This is some more information after truncating.</p>]]></content>
+        <author>
+            <name>Tom Robotham</name>
+            <uri>https://www.audiolabs-erlangen.de/fau/assistant/robotham</uri>
+        </author>
+        <category label="PhD" term="PhD"/>
+        <category label="testing" term="testing"/>
+        <category label="update" term="update"/>
+    </entry>
+</feed>

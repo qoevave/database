@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>QoEVAVE Blog</title>
+        <link>https://your-docusaurus-test-site.com/database/blog</link>
+        <description>QoEVAVE Blog</description>
+        <lastBuildDate>Sat, 10 Jul 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[New blog test]]></title>
+            <link>https://your-docusaurus-test-site.com/database/blog/2021/07/10/blogTest</link>
+            <guid>/2021/07/10/blogTest</guid>
+            <pubDate>Sat, 10 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[this is the first test blog post.]]></description>
+            <content:encoded><![CDATA[<p>Welcome to this blog post.
+This blog is created with Docusaurus.</p><p>This is some more information after truncating.</p>]]></content:encoded>
+            <category>PhD</category>
+            <category>testing</category>
+            <category>update</category>
+        </item>
+    </channel>
+</rss>
