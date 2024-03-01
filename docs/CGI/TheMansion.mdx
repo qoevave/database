@@ -1,0 +1,90 @@
+---
+title: The Mansion
+custom_edit_url: null 
+---
+
+import MansionCarouselVariableWidth from '../../src/components/mansionCarousel';
+import ReactCompareImage from 'react-compare-image';
+import TextImage from '../../src/components/textImageLeft'
+import TextGIF from '../../src/components/textBehaviorLeft'
+
+import Mansion from '/img/cgi/mansion/mansion_lighting.png';
+import Baked from '/img/cgi/mansion/mansion_lighting_baked.png';
+//import BatsScriptImg from '/img/cgi/BatSoundScripts.png';
+import MansionBehavior from '/img/cgi/mansion/animation_mansion_dark.gif';
+
+## Scene Overview
+
+### Concept 
+
+The concept of the Mansion scene is to have an indoor space to explore, with multiple audio objects and visual points-of-interest. While exploring the Mansion, various audio cues will playback to indicate that certain objects have changed in some way. Users must rely on localization and semantic audio cues to discover what has changed.   
+
+### Level Design
+
+The design of the Mansion is based on adjoining shoebox shaped spaces of different sizes. The rooms feature a balcony level meaning elevation perception also becomes revelent when listing to sources above or below. The scene has multiple surface types, and objects of multiple materials. Consequently, interactivity with objects places more emphasis on reproducing plausible audio for impact sounds and surface collisions. 
+
+### Features
+
+<MansionCarouselVariableWidth/>
+
+<br />
+
+### Interactivity & Event Examples
+
+- Self-playing piano. 
+- Interactive objects that have different audio for impact on various materials.
+- Changing audiovisual objects based on user position, triggering an audio cue. 
+    - Gramaphone triggered to play when exploring lower floor.
+    - Changing furniture arrangement when looking away. 
+    - Changing arrangement of chess pieces when looking away. 
+    - Changing arrangement of tableware when looking away. 
+    - Paintings change image when user is in proximity. 
+
+### Task Example
+
+- Audio localization: Identify all sources that trigger throughout exploration. Audio cues will only trigger when ***not*** looking at the object. Thus front-to-back confusion and localization quality (e.g., with individualized vs generic HRTFs) plays a crucial role. 
+
+## Audio
+
+### Main Sources
+
+- Piano playing Beethoven's Moonlight Sonata.
+- Gramaphone playing music. 
+- Triggers of various audio cues with semantic relation to visual object.
+
+:::info Audio Files
+
+Visit the [audio information](./AudioInformation) page to download a comprehensive catalogue on audio files and corresponding assets used for objects. 
+
+:::
+
+### Acoustic Geometry
+
+- Acoustic geometry of the Mansion scene[^1].
+- Vertices: 4,680 
+- Triangles: 8,564
+
+![/img/cgi/cinema/cinema_simplifiedMesh.png](/img/cgi/mansion/mansion_simplifiedMesh.png)
+
+[^1]: Acoutic Geometry: Sufaces have been removed to be able to 'see inside'. Blue trianagles are for visualization only of upper and lower floors, and obscuring objects. 
+
+## Visual
+
+### Lighting
+
+- 14 Directional lightmaps: 14x 2048x2048px (149.3 MB)
+
+<ReactCompareImage leftImage={Mansion} rightImage={Baked}/>
+
+## Case Study
+
+- Timelapse of user pose tracking of 14 subjects in a small-scale case-study.
+
+<TextGIF
+    description={[
+      "Task: Explore the Mansion and identify changing objects.",  
+      "X and Z show lateral dimensions in meters, with the size of dots showing Y dimension (virtical height) inside the Unity scene. When drawn, position dots persist as a small dot building an exploration pattern over time.",
+      "Tracking was captured at a rate of 0.2~ms.",
+    ]}
+    imageGif={MansionBehavior}
+/>

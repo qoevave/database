@@ -1,0 +1,72 @@
+/* CSS for TwoColumnComponent using CSS Grid */
+.modelsection{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.img{
+  width: 80%;
+  max-width: 300px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+.dummyBackground {
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.1), 0 20px 20px 0 rgba(65, 64, 64, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 410px;
+  background-image: linear-gradient(230deg, #cee6da, #fbfffd);
+  z-index: -1; 
+  padding-top: 50px;
+}
+
+/* Styling one class specially in dark mode */
+[data-theme='dark'] .dummyBackground {
+  background-image: linear-gradient(to bottom right, #303846, #303846);
+}
+    
+.modeltext {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 800px;
+  padding-bottom: 20px;
+}
+
+.title {
+  color: #333;
+  font-size: 46px;
+  font-weight: bold;
+  letter-spacing: -2px; /* You can adjust the value */
+  padding-top: 20px;
+}
+  
+.description {
+  color: #4d4d4d;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Styling one class specially in dark mode */
+[data-theme='dark'] .title {
+  color: #f1f1f1;
+}
+
+/* Styling one class specially in dark mode */
+[data-theme='dark'] .description {
+  color: #f8f8f8;
+}
+

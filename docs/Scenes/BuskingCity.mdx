@@ -1,0 +1,80 @@
+---
+sidebar_position: 2
+title: BuskingCity
+custom_edit_url: null 
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import Picture from '../../src/components/globe_components/buskingcity';
+import img from "../../static/img/globeImgs/buskingCity.png";
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+<Picture background={img}/>
+
+:::note Location...
+
+Kasemattentor, 90403 Nürnberg <br/>
+:triangular_flag_on_post: GeoTag: 49.45327871682602, 11.086144678780915
+
+:::
+
+## Scene {#about-BuskingCity}
+
+<Tabs className="unique-tabs">
+  <TabItem value="BuskingCity01">
+    <p><b>Scene version</b>: Slow music with pedestrain walking past.</p>
+    <p><b>Preview BuskingCity01</b> on <a href="https://youtu.be/LHinazODG08">YouTube</a> with FAO audio and 8K video. </p>
+    <p><b>Duration</b>: 51 seconds</p>
+    <h3>Download</h3>
+    <ul>
+      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_A_ambiX4_24bit.wav">BuskingCity01_A_ambiX4_24bit.wav</a></li>
+      <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_V_7680x3840_60fps_51s.mkv">BuskingCity01_V_7680x3840_60fps_51s.mkv</a></li>
+      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_AV_7680x3840_60fps_51s_25Mbps_ambiX1_24bit.mp4">BuskingCity01_AV_7680x3840_60fps_51s_25Mbps_ambiX1_24bit.mp4</a></li>
+    </ul>
+    <h3>Spatial / Temporal Indexing </h3>
+    <ul>
+      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
+    </ul>
+    <img src={require('../../static/img/sitiPlots/BuskingCity01_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+  </TabItem>
+  <TabItem value="BuskingCity02">
+    <p><b>Scene version</b>: More upbeat music than in BuskingCity01. No pedestrian.</p>
+    <p><b>Preview BuskingCity02</b> on <a href="https://youtu.be/LlfMHdZxGwU">YouTube</a> with FAO audio and 8K video. </p>
+    <p><b>Duration</b>: 63 seconds</p>
+    <h3>Download</h3>
+    <ul>
+      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_A_ambiX4_24bit.wav">BuskingCity02_A_ambiX4_24bit.wav</a></li>
+      <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_V_7680x3840_60fps_63s.mkv">BuskingCity02_V_7680x3840_60fps_63s.mkv</a></li>
+      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">BuskingCity02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
+    </ul>
+    <h3>Spatial / Temporal Indexing </h3>
+    <ul>
+      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
+    </ul>
+    <img src={require('../../static/img/sitiPlots/BuskingCity02_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+  </TabItem>
+</Tabs>
+
+
+<details>
+<summary>
+ℹ️ Naming Conventions
+</summary>
+  <p>4OA Audio: <code>SceneName+Version</code> > <code>A (audio)</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code> </p>
+  <p>8K Video:  <code>SceneName+Version</code> > <code>V (video)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> </p>
+  <p>YouTube:   <code>SceneName+Version</code> > <code>AV (audiovideo)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code></p>
+</details>
+

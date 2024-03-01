@@ -1,0 +1,28 @@
+/* CodeWithImage.module.css */
+.textWithImageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .textColumn {
+    flex: 1;
+    padding-left: 10px;
+    width: 50%;
+  }
+  
+  .imageColumn {
+    flex: 1;
+    padding-right: 10px;
+    text-align: center; 
+    width: 50%;
+  }
+
+  .img{
+    border-radius: 5px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Add any additional styling as needed */
+  

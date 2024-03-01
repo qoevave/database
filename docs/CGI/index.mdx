@@ -1,0 +1,206 @@
+---
+custom_edit_url: null 
+---
+
+# CGI Scenes Database
+
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+import ImageButton from '../../src/components/modelImages';
+import caveImage from '/img/cgi/cave/Cave.png';
+import cinemaImage from '/img/cgi/cinema/Cinema.png';
+import mansionImage from '/img/cgi/mansion/Mansion.png';
+import TextImage from '../../src/components/textImageLeft';
+import TextImageRight from '../../src/components/textImageRight';
+import textureAtlas from '/img/cgi/textureAtlas.png';
+import lods from '/img/cgi/lods.png';
+import acousticAttributes from '/img/cgi/MOS.All.AcousticAttributes.png'
+
+## Overview
+
+The QoEVAVE CGI Scene database is a repository of three high-quality audiovisual scenes; The Cave, Cinema, and Mansion. Unlike the [360 Scenes Database](../Scenes/index.mdx) which features three degrees-of-freedom videos, the CGI Scene Database is intended for six degrees-of-freedom VRs with the addition of further task-based and interactive elements. The CGI Scene Database features interactive visual, and audiovisual objects, non-interactive static audio sources, triggered audio sources, in aditional to fully modelled acoustic geometry for advanced audio rendering. For more information, please visit the [publication](#cgipublication). 
+
+## CGI Scenes
+
+See the indivisual CGI scene pages for more information on the following:
+
+- Concept and level (scene) design. 
+- Interaction possibilities, scene task, and features.
+- Bespoke acoustic geometry for acoustic rendering.
+- Scene specific implementation.
+- Exploration data from small scale case study.  
+
+### [The Cave](./CGI/TheCave)
+
+<ImageButton  imageUrl={caveImage} bulletPoints={[
+    'Dark scene with interactive lantern as light source',
+    'Walkie-talkie sound source for way-finding tasks', 
+    'Complex acoustic geometry']} 
+    sceneButton={'Cave info ... 💡 '}
+    to={'CGI/TheCave'}/>
+
+### [The Cinema](./CGI/TheCinema)
+
+<ImageButton  imageUrl={cinemaImage} bulletPoints={[
+    'Virtual cinema modelled after the Fraunhofer IIS cinema.',
+    'Import your own audio visual content.', 
+    'Includes simple human avatars and interactable objects.']} 
+    sceneButton={'Cinema info ... 💡 '}
+    to={'CGI/TheCinema'}/>
+
+### [The Mansion](./CGI/TheMansion)
+
+<ImageButton  imageUrl={mansionImage} bulletPoints={[
+    'Old-style mansion with lower and higher floor.',
+    'Interactive objects with audio for soft and hard impact sounds on various materials.', 
+    'Audio triggers throughout user exploration for cognitive and perceptual tasks.']} 
+    sceneButton={'Mansion info ... 💡 '}
+    to={'CGI/TheMansion'}/>
+
+## Visual Design
+
+### Future-Proofing with HDRP
+
+The Unity scenes are developed using Unity's High Definition Render Pipeline (HDRP). This pipeline offers several high-fidelity rendering features such as ray-tracing, lighting volumetrics, and post-processing effects. However, rendering visuals for real-time virtual reality is still computationally expensive, and implementing even just a collection of these effects can cause severe frame-drops due to the rendering time required. 
+
+For the CGI Scene Database, a great benefit of choosing the HDRP is to future-proof the project. Given the progression of both virtual reality headsets and graphic rendering capabilities, the potential to include more computationally intensive effects becomes more likely. For now, volumetric lighting effects (seen in [Mansion](./CGI/TheMansion) and [Cave](./CGI/TheCave)) is a demonstration of some specific HDRP features currently implemented. 
+
+### Optimization
+
+<TextImage
+imagePath={textureAtlas}
+description={{
+    title: "Texture Atlas Material",
+    content: (
+    <p>
+        To reduce the number of draw calls, many of the textures within the scenes are combined into a texture atlas. Intstead of indivdual textures per object, all the textures for static objects can be combined into a single texture atlas. The right image is an example of combined textures (e.g., ambient occlusion, normals, roughness) to form a material composite for the scene. 
+    </p>
+    ),
+}}
+/>
+<br />
+<TextImageRight
+imagePath={lods}
+description={{
+    title: "Levels of Detail (LODs)",
+    content: (
+    <p>
+        Many of the models in the CGI Scene Database have three LOD levels to save on draw speed. The right image shows an example of the wall lamps in the Mansion scene. From left to right, we see the increase in mesh detail. As the camera approachs or moves away from the model, these LODs will be swapped out to maintain performance. 
+    </p>
+    ),
+}}
+/>
+
+
+
+## Audio Implementation
+
+### Object-based Audio
+
+The audio implementation of the provided scenes is done using an object-based workflow. To render the audio objects, the [MetaXR Audio SDK](https://developer.oculus.com/documentation/unity/meta-xr-audio-sdk-unity-intro/) was included inside the projects. However, this can be swapped out for other audio spatializers in Unity if desired. 
+
+:::tip Audio
+
+For more information on audio rendering and a complete asset catalogue for all scenes, take a look at the [Asset Information](./CGI/AssetInformation) page. 
+
+:::
+
+### Playback types
+
+Each of the scenes feature two types of audio playback:
+
+- Event-based playback: Triggered by a user interation or scripted event, the event-based audio normally represents repeatable events such as impact sounds or doors opening / closing, that can occur at any time. 
+- Continuous playback: Continuous playback audio is audio that begins playback upon scene start, and continous to play throughout the scene being active. For example, this would include environmental noise or a radio playing, or sounds that are not stricly controlled by users interaction. For a radio, the user may interact and mute the audio, but the audio will continue to 'play' as if it were a real-time broadcast. 
+
+### Acoustic Diversity
+
+<TextImage
+imagePath={acousticAttributes}
+description={{
+    title: "Rendering relevance",
+    content: (
+    <p>
+        A large portion of the scene design was driven by attempting to provide a set of acoustically diverse environments. The choice of a Cave, Cinema, and Mansion not only offered differences in potential scene tasks and audio stimuli, but also acoustic properties required in acoustic auralization. To gain some initial impressions, we gathered some initial ratings on rendering 'relevance' for a given set of acoustic attributes in each scene (N = 5 audio experts). See publication for attribute descriptions. 
+    </p>
+    ),
+}}
+/>
+
+<br />
+
+:::info
+
+Results of the small-scale user study is not meant to be an exhausive factor analysis of the scene, but simply to provide some initial insight.
+
+:::
+
+
+
+
+
+
+
+### Bespoke Acoustic Geometry
+
+Each of the CGI scenes come with bespoke acoustic meshes made in blender. The provided meshes of each scene allows a more accurate rendering of acoustic features such as occlusion, diffration, and early reflections matching with the visual geometry, as opposed to shoebox-style acoustic rooms. More information can be found [here](./CGI/AssetInformation) on acoustic geometry requirements, or scene-specific geometry on the Cave, Cinema, and Mansion pages.
+
+## Requirements
+
+### PC Hardware and Unity Version
+
+The CGI Scene Database was developed using **Unity v2021.3** LTS (long term support). The Scenes can also be used in newer versions of Unity, but may require fixing compilation errors when importing.
+
+Scene performance was tested with the following PC specifications:
+
+- OS: Windows 64-bit 10
+- CPU: AMD Ryzen 7 5800X 8-core @ 3.80 GHz
+- RAM: 32 GB
+- GPU: NVIDIA GeForce RTX 3080
+
+### VR Input Compatability
+
+The Unity project is made availale with the **Unity XR Interation Toolkit** along with the **XR Plugin Management** system, and the **Action-based Input System**. For VR interaction, the **OpenXR plugin** and **Oculus XR plugin** are provided. Consequently, the project can be made to run with most modern VR headsets. 
+
+
+
+## Version Download
+
+### v1.0
+
+:::tip see you in tokyo ⛩️
+
+`Download` links are currently inactive until conference presentation (29.04.2024)
+https://sched.co/1Z3Xf
+
+:::
+
+The CGI Scenes are available either as individual unity packages, or a complete unity project. 
+
+Individual scene packages are a container of all audio and visual assets along with scene-specific scripts. This option is recommended if you only wish to have one scene, and you have your own VR mechanics / SDKs.
+
+- [The Cave] (coming soon)
+- [The Cinema] (coming soon)
+- [The Mansion] (coming soon)
+
+The Unity project download is a collection of all three scenes in addition to the required SDKs for VR mechanics. This option is reccommened if you wish to have more plug-and-play ready content. 
+
+- [Unity Project] (coming soon)
+
+## Publication{#cgipublication}
+
+When using the QoEVAVE CGI Scene Database, please cite the following works. 
+
+> Robotham, T., Rebmann, D., Fintineanu-Anghelescu, D. O., Raake, A., Habets, E. A. P. April, 2024. 
+***CGI Scenes for Interactive Audio Research and Development: Cave, Cinema, and Mansion***. In Proc, 6th AES International Conference on Audio for Games. Toyko, Japan.
+
+```
+@inproceedings{robotham2024,
+title = {CGI Scenes for Interactive Audio Research and Development: Cave, Cinema, and Mansion},
+author = {Robotham, Thomas and Rebmann, Daniela and Fintineanu-Anghelescu, Dominik O. and Raake, Alexander and Habets, Emanuël A. P.},
+year = {2024},
+booktitle = {6th AES International Conference on Audio for Games},
+address={Tokyo, Japan},
+pages={1--11}
+}
+```

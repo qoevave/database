@@ -1,0 +1,91 @@
+---
+title: The Cinema
+custom_edit_url: null 
+---
+
+import CinemaCarouselVariableWidth from '../../src/components/cinemaCarousel';
+import ReactCompareImage from 'react-compare-image';
+import TextImage from '../../src/components/textImageLeft'
+import TextGIF from '../../src/components/textBehaviorLeft'
+
+import Cinema from '/img/cgi/cinema/cinema_lighting.png';
+import Baked from '/img/cgi/cinema/cinema_lighting_baked.png';
+import CinemaBehavior from '/img/cgi/cinema/animation_cinema_dark.gif';
+
+## Scene Overview
+
+### Concept 
+
+The concept of the Cinema scene is to provide a VR setting that most users have a relatable inner-reference. The majority of people have visited a cinema, and thus likely have a good understanding of the acoustic treatment. Moreover, the cinema provides a flexible multimedia environemt whereby various audio reproduction formats can be evaluated with the option to include readily available 2D visual content. 
+
+### Level Design
+
+The Cinema design is based on the cinema at [Fraunhofer IIS](https://www.iis.fraunhofer.de/de/ff/amm/for/forschbewegtbildtechn/digitaleskino.html). The Cinema features a 10x7 row of chairs in a theatre seating arrangement. Several of the seats ore occupied by virtual avatars which can be deactivated. The scene as a number of small interactable objects (e.g., tickets, popcorn), and a button that can be used to toggle the cinema lighting on/off. A cinema managaer can be used to assign a video for media playback. 
+
+:::tip Coming up ...
+
+Future contributions to the Cinema scene will include BRIRs captures at all seating positions for real-life AB comparison to virtual rendering. 
+
+:::
+
+### Features
+
+<CinemaCarouselVariableWidth/>
+
+<br />
+
+### Interactivity & Event Examples
+
+- Cinema props: Items such as popcorn, nachos, tickets, can be picked up. 
+- Lighting button: Push button can be virtually pressed to toggle the cinema lights on/off.
+- Avatar phonecall: Animation of one the avatars will take a phone call shortly into the film starting. They will they talk quietly as they leave the cinema.
+- Other avatars: All other avatars have small animations for eating or drinking.
+- Curtain draw: After a defined period of time, the curtains will open and lights will dim, and audiovisual media will start playing.   
+
+### Task Example
+
+- Virtual sweet-spot: Evaluate virtual seating positions, against randomized 'sweet-spot' postions using expert and naive listers to understand perceptual and cognitive biases on the ability to identify the 'sweet-spot' based on audio cues. 
+
+## Audio
+
+### Main Sources
+
+- Audiovisual media which can be included via a cinema manager. 
+- Avatars that receives a phone call. 
+
+:::info Audio Files
+
+Visit the [audio information](./AudioInformation) page to download a comprehensive catalogue on audio files and corresponding assets used for objects. 
+
+:::
+
+### Acoustic Geometry
+
+- Acoustic geometry of the cinema scene[^1].
+- Vertices: 6,980 
+- Triangles: 13,024
+
+![/img/cgi/cinema/cinema_simplifiedMesh.png](/img/cgi/cinema/cinema_simplifiedMesh.png)
+
+[^1]: Acoutic Geometry: Sufaces have been removed to be able to 'see inside'. Blue trianagles are for visualization only of upper and lower floors, and obscuring objects. 
+
+## Visual
+
+### Lighting
+
+- 2 Directional lightmaps: 2x 4096x4096px (85.3 MB)
+
+<ReactCompareImage leftImage={Cinema} rightImage={Baked}/>
+
+## Case Study
+
+- Timelapse of user pose tracking of 14 subjects in a small-scale case-study.
+
+<TextGIF
+    description={[
+      "Task: Explore the cinema and seating positions to find your preferred listening position.",  
+      "X and Z show lateral dimensions in meters, with the size of dots showing Y dimension (virtical height) inside the Unity scene. When drawn, position dots persist as a small dot building an exploration pattern over time.",
+      "Tracking was captured at a rate of 0.2~ms.",
+    ]}
+    imageGif={CinemaBehavior}
+/>

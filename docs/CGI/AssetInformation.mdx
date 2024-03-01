@@ -1,0 +1,187 @@
+---
+custom_edit_url: null 
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import ThemedImage from '@theme/ThemedImage';
+import MetaRoom from '../../static/img/cgi/MetaAcousticProperties.PNG';
+import MetaSource from '../../static/img/cgi/MetaSource.PNG';
+import TextImage from '../../src/components/textImageLeft';
+
+# Asset Information
+
+## Catalogue 
+
+A complete catalogue of assets used and respective licencing information can be found in the Asset Catalogue download file.
+
+- [Asset Catalogue] (coming soon)
+
+For each scene, detailed assets include audio files, 3D assets (`.fbx` or `.asset` files), materials, and textures (e.g., `.jpg`, `.png`). For each corresponding asset, source / links are provided when applicable with a note to the respective license. 
+
+## Audio Implementation
+
+### Audio Spatializer
+
+All scenes come with the [Meta XR Audio SDK](https://developer.oculus.com/documentation/unity/meta-xr-audio-sdk-unity-spatialize/) already integrated as means to have some plug-and-play audio straight away. The current implementation inside the scenes is not intended to be a physically accurate rendering of the virtual space, and can be adjusted to the users liking or experimental needs. (e.g., evaluating audio localization in 6-DoF environment with and without reverberation, mixture of dry / wet objects, acoustic room divergence effects, etc.)
+
+:::info
+
+The current implementation does not make use of the `experimental source settings` within the Meta XR Audio SDK. Therefore, features such as source directivity, early reflections dB boost, and volumetric radius for sources are not present, but can be added. 
+
+:::
+
+### Script Examples
+
+<TextImage
+    description={{
+        title: "MetaXRAudioRoomAcousticProperties.cs",
+        content: (
+        <p>
+            Example of the Room Acoustics script inside the Mansion Scene. 
+            <br />
+            <br />
+            Width (18 m), depth (16 m), and height (8 m) are set to the rough dimensions of the Mansion scene set as a shoebox shape giving a total volume of 2,304 cubic meters. 
+            <br />
+            <br />
+            The materials applied to the shoebox shape are thick wood, glass, carpet, and plaster on brick. With the sufrace area, volume, and absorption coefficients for the frequency band 775-3408 Hz for all materials, then we can use the Sabine formula to calculate a rough RT60. This gives us a rough RT60 of .39 seconds for the frequency band 775-3408 Hz. 
+            <br />
+            <br />
+            As this is based on a showbox model with materials perscribed to the complete sides, this is not representative of the CGI model. For example, the floor features a mixture of wooden flooring and large carperts.  
+        </p>
+        ),
+    }}
+    imagePath={MetaRoom}
+/>
+
+<br />
+
+<TextImage
+imagePath={MetaSource}
+description={{
+    title: "MetaXRAudioSource.cs",
+    content: (
+    <p>
+        Example of the Audio Source script on the piano. 
+        <br />
+        <br />
+        The audio source scripts are attached to sound source that has the Unity base Audio Source component. The Meta source script can the be used to apply the audio rendering features such as, spatialization, reverberation, and adjust wet / dry mix.
+    </p>
+    ),
+}}
+/>
+
+
+### Advanced Audio Rendering
+
+The acoustic meshes are provided as manifold geometric shapes, otherwise known as 'solid' meshes with a governing thickness. The below example shows including how non-manifold geometry can cause issues with rendering acoustics, using techniques such as ray-tracing. 
+
+With the **non-manifold** geometry example, the ray cast from the right does not recognise the plane as a surface due, to the surface normal facing the left. The ray will consequently shoot through the plane and hence be treated as acoustically transparent. With the **manifold** geometry example all surfaces have a governing thickness, thus all normals are facing 'outward'. This can be correctly identified as a 'solid' surface. To confirm any mesh is correctly set up for acoustic rendering, imagine the 3D mesh being unfolded to a flat 2D shape. If the mesh has been made correctly, all surface normals should point in one direction. 
+
+<ThemedImage
+  alt="Docusaurus themed image"
+  sources={{
+    light: useBaseUrl('/img/cgi/ManifoldGeometryExample.svg'),
+    dark: useBaseUrl('/img/cgi/ManifoldGeometryExample_dark.svg'),
+  }}
+/>
+
+## VR SDKs / Packages
+
+List of notable packages and SDKs used inside the Unity scenes. 
+
+- [**<u>HDRP</u>**](https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@12.1/manual/index.html) v12.1.14 - Registry @ *com.unity.render-pipelines.high-definition*
+
+- [**<u>Input System</u>**](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.7/manual/index.html) v1.7.0 - Registry @ *com.unity.inputsystem*
+
+- XR Plugins
+    - [**<u>Oculus</u>**](https://docs.unity3d.com/Packages/com.unity.xr.oculus@3.3/manual/index.html) v3.3.0 - Registry @ *com.unity.xr.oculus*
+    - [**<u>OpenXR</u>**](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.9/manual/index.html) v1.9.1 - Registry @ *com.unity.xr.openxr*
+    - [**<u>XR Interaction Toolkit</u>**](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.5/manual/index.html) v2.5.2 Registry @ *com.unity.xr.interaction.toolkit*
+    - [**<u>XR Plugin Management</u>**](https://docs.unity3d.com/Packages/com.unity.xr.management@4.4/manual/index.html) v4.4.0 Registry @ *com.unity.xr.management*
+    - [**<u>Meta XR Audio SDK</u>**](https://developer.oculus.com/documentation/unity/meta-xr-audio-sdk-unity-req-setup/) v57.0.0-preview @ *com.meta.xr.sdk.audio.samples*
+        - Imported using legacy `.unitypackage` method.
+
+## Licences and Third Party Notices
+
+### Licences
+
+List of Third Party Notices for the above SDKs / Packages.
+
+:::info [Unity Companion License](https://unity.com/legal/licenses/unity-companion-license)
+
+Governing packages:
+
+- `HDRP`
+- `Input System`
+- `XR Plugin Management`
+- `XR Interaction Toolkit` (+ Third Party Notice Apache 2.0 - Google Inc.)
+- `OpenXR Plugin` (+ Third Party Notice Apahce 2.0 - Facebook Technologies, LLC and its affiliates.)
+- `Oculus XR Plugin` (+ Third Party Notice Oculus SDK License Agreement.)
+
+> Unity Technologies ApS (“Unity”) grants to you a worldwide, non-exclusive, no-charge, and royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, and distribute the work of authorship that accompanies this License (“Work”) subject to the following terms and conditions:
+
+<details>
+<summary>
+T&Cs 
+</summary>
+
+1. Unity Companion Use. Exercise of the license granted herein is permitted as long as it is in connection with the authoring and/or distribution of applications, software, or other content under a valid Unity content authoring and rendering engine software license (“Engine License”). That means, for example, as long as you authored content using the Work under an Engine License, you may distribute the Work in connection with that content as you see fit under this License. No other exercise of the license granted herein is permitted, and in no event may the Work be used for competitive analysis or to develop a competing product or service.
+
+2. No Modification of Engine License. Neither this License nor any exercise of the license granted herein modifies the Engine License in any way.
+
+3. Ownership; Derivative Works.
+
+    3.1. You own your content. In this License, “derivative works” means derivatives of the Work itself--works derived only from the Work by you under this License (for example, modifying the code of the Work itself to improve its efficacy); “derivative works” of the Work do not include, for example, games, apps, or content that you create with the Work. You keep all right, title, and interest in your own content.
+
+    3.2. Unity owns its content. While you keep all right, title, and interest to your own content per the above, as between Unity and you, Unity will own all right, title, and interest to all intellectual property rights (including patent, trademark, and copyright) in the Work and derivative works of the Work, and you hereby assign and agree to assign all such rights in those derivative works to Unity. Should assignment be invalid for any reason, you grant to Unity an irrevocable, perpetual, worldwide, non-exclusive, no-charge, and royalty-free license (with the right to grant sublicenses) under those intellectual property rights to those derivative works. You also agree to waive or refrain from asserting any author’s right, moral rights, or like rights to the extent necessary to permit exploitation as contemplated under this License.
+
+    3.3. Your right to use derivative works. You will always have the right to use derivative works of the Work you create, consonant with this License.
+
+4. Trademarks. You are not granted any right or license under this License to use any trademarks, service marks, trade names, products names, or branding of Unity or its affiliates (“Trademarks”). Descriptive uses of Trademarks are permitted; see, for example, Unity’s Trademark Guidelines athttps://unity.com/legal/branding_trademarks.
+
+5. Notices & Third-Party Rights. This License, including the copyright notice associated with the Work, must be provided in all substantial portions of the Work and derivative works thereof (or, if that is impracticable, in any other location where such notices are customarily placed). Further, if the Work is accompanied by a Unity “third-party notices” or similar file, you acknowledge and agree that software or content identified in that file is governed by those separate license terms.
+
+6. DISCLAIMER, LIMITATION OF LIABILITY. THE Work AND ANY DERIVATIVE WORKS THEREOF IS PROVIDED ON AN "AS IS" BASIS, AND IS PROVIDED WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND/OR NON-INFRINGEMENT. IN NO EVENT SHALL ANY COPYRIGHT HOLDER OR AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES (WHETHER DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL, INCLUDING PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES, LOSS OF USE, DATA, OR PROFITS, AND BUSINESS INTERRUPTION), OR OTHER LIABILITY WHATSOEVER, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM OR OUT OF, OR IN CONNECTION WITH, THE Work OR ANY DERIVATIVE WORKS THEREOF OR THE USE OF OR OTHER DEALINGS IN SAME, EVEN WHERE ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+7. USE IS ACCEPTANCE and License Versions. Your access to and use of the Work constitutes your acceptance of this License and its terms and conditions. This License may be modified or updated; upon any such modification or update, you will comply with the terms of the updated License for any use of any of the Work under the updated License.
+
+8. Use in Compliance with Law and Termination. Your exercise of the license granted herein will at all times be in compliance with applicable law and will not infringe any proprietary rights (including intellectual property rights); this License will terminate immediately (i) on any breach by you of this License; and (ii) if you commence any form of patent litigation, including a cross-claim or counterclaim, against anyone wherein you allege that the Work constitutes direct or secondary/indirect patent infringement.
+
+9. Severability. If any provision of this License is held to be unenforceable or invalid, that provision will be enforced to the maximum extent possible and the other provisions will remain in full force and effect.
+
+10. Governing Law and Venue. This License is governed by and construed in accordance with the laws of Denmark, except for its conflict of laws rules; the United Nations Convention on Contracts for the International Sale of Goods will not apply. If you reside (or your principal place of business is) within the United States, you and Unity agree to submit to the personal and exclusive jurisdiction of and venue in the state and federal courts located in San Francisco County, California concerning any dispute arising out of this License (“Dispute”). If you reside (or your principal place of business is) outside the United States, you and Unity agree to submit to the personal and exclusive jurisdiction of and venue in the courts located in Copenhagen, Denmark concerning any Dispute.
+
+</details>
+
+:::
+
+### Third Party Notices
+
+List of Third Party Notices for associated package components using Licenses:
+    
+:::note [Apache 2.0](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.5/license/Third%20Party%20Notices.html)
+
+Pertaining to packages:
+
+- `XR Interaction Toolkit` regarding components:
+    - `Gesture code from AR Core Unity ObjectManipulation Example`. Copyright  © 2017 Google Inc. 
+
+- `OpenXR Plugin` regarding components:
+
+    - `OpenXR-SDK-Source`. Copyright © Facebook Technologies, LLC and its affiliates
+
+:::
+
+
+:::note [Oculus SDK License Agreement](https://developer.oculus.com/licenses/oculussdk/)
+
+Pertaining to packages:
+
+- `Oculus XR Plugin` regarding components: 
+    - `AudioPluginOculusSpatializer`. Copyright © Facebook Technologies, LLC and its affiliates.
+
+:::
+
+
+
+

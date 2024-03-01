@@ -1,0 +1,22 @@
+/* CodeWithImage.module.css */
+.textWithImageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .textColumn {
+    flex: 1;
+    padding-right: 10px;
+    width: 50%;
+  }
+  
+  .imageColumn {
+    flex: 1;
+    padding-left: 10px;
+    text-align: center; 
+    width: 50%;
+  }  
+  
+  /* Add any additional styling as needed */
+  

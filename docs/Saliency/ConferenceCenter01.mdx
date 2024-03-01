@@ -1,0 +1,104 @@
+---
+sidebar_position: 6
+title: ConferenceCenter01
+custom_edit_url: null 
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+import GIFsText from '../../src/components/saliency_gif_components/giflayout';
+import gif1 from '../../static/img/HeatMapGifs/1_No_Audio/ConferenceCenter01.gif';
+import gif2 from '../../static/img/HeatMapGifs/2_Mono_Audio/ConferenceCenter01.gif';
+import gif3 from '../../static/img/HeatMapGifs/3_4OA_Audio/ConferenceCenter01.gif';
+
+export const Highlight = ({children, color}) => (
+  <span
+    style={{
+      backgroundColor: color,
+      borderRadius: '4px',
+      color: '#fff',
+      padding: '0.2rem',
+    }}>
+    {children}
+  </span>
+);
+
+## Data Description {#saliency-ConferenceCenter01}
+
+Saliency data is captured for the scene using the following audio scenarios:
+
+<ul>
+<li><b>No audio:</b> No audio (or headphones) are provided to the subjects.</li>
+<li><b>Mono audio:</b> Mono audio is present to subject over headphone. Mono audio is derrived from the first channel of the ambisonics audio file.</li>
+<li><b>4OA audio:</b> 4th-order Ambisonics is presented to subjects over headphones and head tracked (rotated) in real-time. </li>
+</ul>
+
+<GIFsText
+  img1={gif1}
+  img2={gif2}
+  img3={gif3}
+/>
+
+
+## Scene Saliency Data Downloads 
+
+<ul>
+<li>Ridgeline Plot: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/Yawridge_density_plot_ConferenceCenter01.pdf">Yawridge_density_plot_ConferenceCenter01.pdf</a></li>
+<li>Circular Bar Plot: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/Circular_BarPlot_ConferenceCenter01.pdf">Circular_BarPlot_ConferenceCenter01.pdf</a></li>
+</ul>
+
+## Senario Specific Saliency Downloads
+
+<Tabs className="unique-tabs">
+  <TabItem value="No Audio">
+    <p><b>Scenario description</b>: The video was viewed on the <a href="https://www.valvesoftware.com/de/index">Valve Index</a> without any audio playing.</p>
+    <h3>Download the Headrotation Data</h3>
+    <ul>
+      <li>Full duration: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/1_No_Audio/1_No_Audio_ConferenceCenter01_Full_Duration.zip">1_No_Audio_ConferenceCenter01_Full_Duration.zip</a></li>
+      <li>Data cut down to parts of 10 seconds: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/1_No_Audio/1_No_Audio_ConferenceCenter01_10_sec.zip">1_No_Audio_ConferenceCenter01_10_sec.zip</a></li>
+      <li>Heatmaps: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/1_No_Audio/1_No_Audio_ConferenceCenter01_Heatmaps.zip">1_No_Audio_ConferenceCenter01_Heatmaps.zip</a></li>
+    </ul>
+    <h3>Scene Verbalization Data</h3>
+    <ul>
+      <li>Scene Verbalization Document: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/1_No_Audio/1_No_Audio_ConferenceCenter01.docx">1_No_Audio_ConferenceCenter01.docx</a></li>
+    </ul>
+  </TabItem>
+
+  <TabItem value="Mono Audio">
+    <p><b>Scenario description</b>: The video was viewed on the <a href="https://www.valvesoftware.com/de/index">Valve Index</a> with mono audio playing on the <a href="https://www.beyerdynamic.de/dt-990-pro.html.">DT 990 PRO</a></p>
+    <h3>Download the Headrotation Data</h3>
+    <ul>
+      <li>Full duration: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/2_Mono_Audio/2_Mono_Audio_ConferenceCenter01_Full_Duration.zip">2_Mono_Audio_ConferenceCenter01_Full_Duration.zip</a></li>
+      <li>Data cut down to parts of 10 seconds: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/2_Mono_Audio/2_Mono_Audio_ConferenceCenter01_10_sec.zip">2_Mono_Audio_ConferenceCenter01_10_sec.zip</a></li>
+      <li>Heatmaps: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/2_Mono_Audio/2_Mono_Audio_ConferenceCenter01_Heatmaps.zip">2_Mono_Audio_ConferenceCenter01_Heatmaps.zip</a></li>
+    </ul>
+    <h3>Scene Verbalization Data</h3>
+    <ul>
+      <li>Scene Verbalization Document: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/2_Mono_Audio/2_Mono_Audio_ConferenceCenter01.docx">2_Mono_Audio_ConferenceCenter01.docx</a></li>
+    </ul>
+  </TabItem>
+
+  <TabItem value="Fourth Order Ambisonics Audio (4OA Audio)">
+    <p><b>Scenario description</b>: The video was viewed on the <a href="https://www.valvesoftware.com/de/index">Valve Index</a> with 4OA audio playing on the <a href="https://www.beyerdynamic.de/dt-990-pro.html.">DT 990 PRO</a></p>
+    <h3>Download the Headrotation Data</h3>
+    <ul>
+      <li>Full duration: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/3_4OA_Audio/3_4OA_Audio_ConferenceCenter01_Full_Duration.zip">3_4OA_Audio_ConferenceCenter01_Full_Duration.zip</a></li>
+      <li>Data cut down to parts of 10 seconds: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/3_4OA_Audio/3_4OA_Audio_ConferenceCenter01_10_sec.zip">3_4OA_Audio_ConferenceCenter01_10_sec.zip</a></li>
+      <li>Heatmaps: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/3_4OA_Audio/3_4OA_Audio_ConferenceCenter01_Heatmaps.zip">3_4OA_Audio_ConferenceCenter01_Heatmaps.zip</a></li>
+    </ul>
+    <h3>Scene Verbalization Data</h3>
+    <ul>
+      <li>Scene Verbalization Document: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Saliency_Zips/ConferenceCenter01/3_4OA_Audio/3_4OA_Audio_ConferenceCenter01.docx">3_4OA_Audio_ConferenceCenter01.docx</a></li>
+    </ul>
+  </TabItem>
+</Tabs>
+
+<details>
+<summary>
+ℹ️ Naming Conventions
+</summary>
+  <p>4OA Audio: <code>SceneName+Version</code> > <code>A (audio)</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code> </p>
+  <p>8K Video:  <code>SceneName+Version</code> > <code>V (video)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> </p>
+  <p>YouTube:   <code>SceneName+Version</code> > <code>AV (audiovideo)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code></p>
+</details>

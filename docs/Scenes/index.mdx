@@ -1,0 +1,169 @@
+# 360 Scene Database
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+## Overview
+
+The QoEVAVE Scenes Database provides an initial audiovisual database consiting of 12 scenes capturing real-life nature and urban scenes. 
+The maximum video resolution is **7680x3840** (8k) at **60 frames-per-second**, with **4th-order Ambisonics spatial audio** (4OA). 
+All video sequences are recorded with a target duration of 60 seconds and designed to represent real-life settings for systematically evaluating various dimensions of uni-/multimodal perception, cognition, behavior, and quality of experience (QoE) in a controlled virtual environment. 
+This database serves as high-quality reference material with an equal focus on auditory and visual sensory information within the QoE community. For more information, please see the [publication](#scenespublication) below.
+
+## Recorded Scenes
+
+You can download individual scenes on each of the available scene pages, or view the [download list](#scenes-download-list) list below. On each scene page, you will find the following information:
+
+- Location information of recording. 
+- Scene version notes describing variations in multiple 'takes'. 
+- Preview link to YouTube (uses 1st-order Ambisonics).
+- Download links for 4th-audio Ambisonics audio, 8k video file, or muxed audiovideo file with 1st-order Ambisonics. 
+- Spatial / Temporal indexing plots on video data.  
+
+## Capture
+
+Media | Device | Description 
+:---:|:---:|---
+Audio | mhacoustics [Eigenmike](https://mhacoustics.com/products) | 32 channel spherical microphone array capable of 4th order higher-order ambisonics output.
+Video | [Insta360 Pro 2](https://www.insta360.com/product/insta360-pro2/) | 360 video camera capable of 8K video output. Comprised of 6 F2.4 fisheye lenses each capturing 4K video resolution up to 120Mbps.
+
+## Specifications
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Information &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description 
+:---:|---
+Video Encoding | ffvhuff  
+Video Resolution | 7680x3840
+Projection Map | Equirectangular
+Video FPS | 59.94
+Audio Sample-rate | 48,000; 24-bit PCM
+4th-Order Ambisonics | Individual .wav files of 4th-order Ambisonics in ACN channel ordering with SN3D normalization. Scene representation has a -90° rotational offset against video files for playback with Unity. Visit [Help](./help/#help-spatialalignment) for more information. Labelled as `ambiX4` in file names.
+1st-Order Ambisonics | 1st-Order Ambisonics in ACN channel ordering with SN3D normalization. Encoded using AAC and muxed with the video files into an .MP4 container. Pre-processed with Google's [spatial media metadata injector](https://support.google.com/youtube/answer/6395969?hl=en) for uploading to YouTube. Labelled as `ambiX1` in file names.
+Audio Post-production | All audio files are provided with a **500ms fade-in/out**. Further post-processing includes EQ (**60 Hz high-pass** and **10 kHz -3dB notch filter**), Omnidirection-compression for make-up gain (**max +5 dB**), and Ambisonic B-Format scene roation for audiovisual alignment. All post-processing was applied with [IEM](https://plugins.iem.at/) VSTs
+
+## Download{#scenes-download-list}
+
+Download links for all individual scenes can be found on the each scene page. There you can download audio (4OA) video (8K) and the muxed audiovideo files (YouTube 1OA) for any available versions of the scene. Comments are provided to note slight changes in scene composition between any available versions.
+
+Alternatively, you can expand the drop down menu below to see all download links for audio, video, and audiovideo files. 
+
+<details>
+<summary>
+Download list
+</summary>
+<Tabs className="unique-tabs">
+  <TabItem value="Audio.wav 🎧">
+    <p>4th-order Ambisonics (4OA) in ambiX format (ACN, SN3D)</p>
+    <ul>
+      <li>Badminton01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton01/Badminton01_A_ambiX4_24bit.wav">Badminton01_A_ambiX4_24bit.wav</a></li>
+      <li>Badminton03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton03/Badminton03_A_ambiX4_24bit.wav">Badminton03_A_ambiX4_24bit.wav</a></li>
+      <li>Badminton04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton04/Badminton04_A_ambiX4_24bit.wav">Badminton04_A_ambiX4_24bit.wav</a></li>
+      <li>Badminton05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton05/Badminton05_A_ambiX4_24bit.wav">Badminton05_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingCity01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_A_ambiX4_24bit.wav">BuskingCity01_A_ambiX4_24bit.wav</a></li>    
+      <li>BuskingCity02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_A_ambiX4_24bit.wav">BuskingCity02_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingUnderpass01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass01/BuskingUnderpass01_A_ambiX4_24bit.wav">BuskingUnderpass01_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingUnderpass02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass02/BuskingUnderpass02_A_ambiX4_24bit.wav">BuskingUnderpass02_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingUnderpass03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass03/BuskingUnderpass03_A_ambiX4_24bit.wav">BuskingUnderpass03_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingUnderpass04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass04/BuskingUnderpass04_A_ambiX4_24bit.wav">BuskingUnderpass04_A_ambiX4_24bit.wav</a></li>
+      <li>BuskingUnderpass05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass05/BuskingUnderpass05_A_ambiX4_24bit.wav">BuskingUnderpass05_A_ambiX4_24bit.wav</a></li>
+      <li>Cheerleading01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_A_ambiX4_24bit.wav">Cheerleading01_A_ambiX4_24bit.wav</a></li>
+      <li>ConferenceCenter01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference01/Conference01_A_ambiX4_24bit.wav">Conference01_A_ambiX4_24bit.wav</a></li>
+      <li>ConferenceParticipant02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_A_ambiX4_24bit.wav">Conference02_A_ambiX4_24bit.wav</a></li>
+      <li>ConferenceParticipant03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_A_ambiX4_24bit.wav">Conference03_A_ambiX4_24bit.wav</a></li>
+      <li>ForestWalk01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk01/ForestWalk01_A_ambiX4_24bit.wav">ForestWalk01_A_ambiX4_24bit.wav</a></li>
+      <li>ForestWalk02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk02/ForestWalk02_A_ambiX4_24bit.wav">ForestWalk02_A_ambiX4_24bit.wav</a></li>
+      <li>ForestWalk03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk03/ForestWalk03_A_ambiX4_24bit.wav">ForestWalk03_A_ambiX4_24bit.wav</a></li>
+      <li>Lake01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Lake01/Lake01_A_ambiX4_24bit.wav">Lake01_A_ambiX4_24bit.wav</a></li>
+      <li>ParkFountains01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ParkFountains01/ParkFountains01_A_ambiX4_24bit.wav">ParkFountains01_A_ambiX4_24bit.wav</a></li> 
+      <li>River01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/River01/River01_A_ambiX4_24bit.wav">River01_A_ambiX4_24bit.wav</a></li> 
+      <li>Skateboarding01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_A_ambiX4_24bit.wav">Skateboarding01_A_ambiX4_24bit.wav</a></li> 
+      <li>Skateboarding03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_A_ambiX4_24bit.wav">Skateboarding03_A_ambiX4_24bit.wav</a></li> 
+      <li>Skateboarding04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_A_ambiX4_24bit.wav">Skateboarding04_A_ambiX4_24bit.wav</a></li> 
+      <li>Skateboarding05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_A_ambiX4_24bit.wav">Skateboarding05_A_ambiX4_24bit.wav</a></li> 
+      <li>Train01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Train01/Train01_A_ambiX4_24bit.wav">Train01_A_ambiX4_24bit.wav</a></li> 
+    </ul>
+  </TabItem>
+  <TabItem value="Video.mkv 🎬">
+    <p>Raw 8K resolution video files.</p>
+    <ul>
+      <li>Badminton01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton01/Badminton01_V_7680x3840_60fps_60s.mkv">Badminton01_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>Badminton03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton03/Badminton03_V_7680x3840_60fps_60s.mkv">Badminton03_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>Badminton04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton04/Badminton04_V_7680x3840_60fps_60s.mkv">Badminton04_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>Badminton05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton05/Badminton05_V_7680x3840_60fps_64s.mkv">Badminton05_V_7680x3840_60fps_64s.mkv</a></li>
+      <li>BuskingCity01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_V_7680x3840_60fps_51s.mkv">BuskingCity01_V_7680x3840_60fps_51s.mkv</a></li>    
+      <li>BuskingCity02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_V_7680x3840_60fps_63s.mkv">BuskingCity02_V_7680x3840_60fps_63s.mkv</a></li>
+      <li>BuskingUnderpass01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass01/BuskingUnderPass01_V_7680x3840_60fps_59s.mkv">BuskingUnderPass01_V_7680x3840_60fps_59s.mkv</a></li>
+      <li>BuskingUnderpass02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass02/BuskingUnderPass02_V_7680x3840_60fps_63s.mkv">BuskingUnderPass02_V_7680x3840_60fps_63s.mkv</a></li>
+      <li>BuskingUnderpass03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass03/BuskingUnderPass03_V_7680x3840_60fps_63s.mkv">BuskingUnderPass03_V_7680x3840_60fps_63s.mkv</a></li>
+      <li>BuskingUnderpass04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass04/BuskingUnderPass04_V_7680x3840_60fps_61s.mkv">BuskingUnderPass04_V_7680x3840_60fps_61s.mkv</a></li>
+      <li>BuskingUnderpass05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass05/BuskingUnderPass05_V_7680x3840_60fps_61s.mkv">BuskingUnderPass05_V_7680x3840_60fps_61s.mkv</a></li>
+      <li>Cheerleading01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/CheerLeading01_V_7680x3840_60fps_68s.mkv">CheerLeading01_V_7680x3840_60fps_68s.mkv</a></li>
+      <li>ConferenceCenter01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference01/Conference01_V_7680x3840_60fps_60s.mkv">Conference01_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>ConferenceParticipant02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_V_7680x3840_60fps_80s.mkv">Conference02_V_7680x3840_60fps_80s.mkv</a></li>
+      <li>ConferenceParticipant03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_V_7680x3840_60fps_83s.mkv">Conference03_V_7680x3840_60fps_83s.mkv</a></li>
+      <li>ForestWalk01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk01/ForestWalk01_V_7680x3840_60fps_60s.mkv">ForestWalk01_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>ForestWalk02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk02/ForestWalk02_V_7680x3840_60fps_60s.mkv">ForestWalk02_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>ForestWalk03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk03/ForestWalk03_V_7680x3840_60fps_60s.mkv">ForestWalk03_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>Lake01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Lake01/Lake01_V_7680x3840_60fps_60s.mkv">Lake01_V_7680x3840_60fps_60s.mkv</a></li>
+      <li>ParkFountains01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ParkFountains01/ParkFountains01_V_7680x3840_60fps_60s.mkv">ParkFountains01_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>River01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/River01/River01_V_7680x3840_60fps_60s.mkv">River01_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>Skateboarding01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_V_7680x3840_60fps_60s.mkv">Skateboarding01_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>Skateboarding03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_V_7680x3840_60fps_60s.mkv">Skateboarding03_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>Skateboarding04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_V_7680x3840_60fps_60s.mkv">Skateboarding04_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>Skateboarding05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_V_7680x3840_60fps_63s.mkv">Skateboarding05_V_7680x3840_60fps_60s.mkv</a></li> 
+      <li>Train01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Train01/Train01_V_7680x3840_60fps_60s.mkv">Train01_V_7680x3840_60fps_60s.mkv</a></li> 
+    </ul>
+  </TabItem>
+  <TabItem value="Audio + Video.mp4 🎧🎬">
+    <p>Encoded audiovideo files uploaded to YouTube. Uses 1st-order Ambisonics (1OA) with AAC encoding and 8K resolution video.</p>
+    <ul>
+      <li>Badminton01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton01/Badminton01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Badminton01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Badminton03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton03/Badminton03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Badminton03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Badminton04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton04/Badminton04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Badminton04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Badminton05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Badminton05/Badminton05_AV_7680x3840_60fps_64s_25Mbps_ambiX1_24bit.mp4">Badminton05_AV_7680x3840_60fps_64s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingCity01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity01/BuskingCity01_AV_7680x3840_60fps_51s_25Mbps_ambiX1_24bit.mp4">BuskingCity01_AV_7680x3840_60fps_51s_25Mbps_ambiX1_24bit.mp4</a></li>    
+      <li>BuskingCity02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingCity02/BuskingCity02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">BuskingCity02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingUnderpass01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass01/BuskingUnderpass01_AV_7680x3840_60fps_59s_25Mbps_ambiX1_24bit.mp4">BuskingUnderpass01_AV_7680x3840_60fps_59s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingUnderpass02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass02/BuskingUnderpass02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">BuskingUnderpass02_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingUnderpass03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass03/BuskingUnderpass03_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">BuskingUnderpass03_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingUnderpass04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass04/BuskingUnderpass04_AV_7680x3840_60fps_61s_25Mbps_ambiX1_24bit.mp4">BuskingUnderpass04_AV_7680x3840_60fps_61s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>BuskingUnderpass05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/BuskingUnderpass05/BuskingUnderpass05_AV_7680x3840_60fps_61s_25Mbps_ambiX1_24bit.mp4">BuskingUnderpass05_AV_7680x3840_60fps_61s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Cheerleading01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4">Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ConferenceCenter01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference01/Conference01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Conference01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ConferenceParticipant02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4">Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ConferenceParticipant03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4">Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ForestWalk01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk01/ForestWalk01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">ForestWalk01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ForestWalk02: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk02/ForestWalk02_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">ForestWalk02_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ForestWalk03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ForestWalk03/ForestWalk03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">ForestWalk03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Lake01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Lake01/Lake01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Lake01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>ParkFountains01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/ParkFountains01/ParkFountains01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">ParkFountains01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>River01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/River01/River01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">River01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>Skateboarding01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>Skateboarding03: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>Skateboarding04: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>Skateboarding05: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">Skateboarding05_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li> 
+      <li>Train01: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Train01/Train01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Train01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li> 
+    </ul>
+  </TabItem>
+</Tabs>
+</details>
+
+## Publication{#scenespublication}
+
+When using the QoEVAVE Scenes Database, please cite the following works. 
+
+> Robotham, T., Singla, A., Rummukainen, O. S., Raake, A., Habets, E. A. P. Sept, 2022. 
+***Audiovisual Database with 360° Video and Higher-Order Ambisonics Audio for Perception, Cognition, Behavior, and QoE Evaluation Research***. In Proc, 14th International Conference on Quality of Multimedia Experience (QoMEX). Lippstadt, Germany. DOI: [10.1109/QoMEX55416.2022.9900893](https://ieeexplore.ieee.org/document/9900893)
+
+Open access versison available at [arXiv:2212.13442v1](https://arxiv.org/pdf/2212.13442.pdf)
+
+```
+@inproceedings{robotham2022,
+title = {Audiovisual Database with 360° Video and Higher-Order Ambisonics Audio for Perception, Cognition, Behavior, and QoE Evaluation Research},
+author = {Robotham, Thomas and Singla, Ashutosh and Rummukainen, Olli S. and Raake, Alexander and Habets, Emanuël A. P.},
+year = {2022},
+booktitle = {14th International Conference on Quality of Multimedia Experience},
+address={Lippstadt, Germany},
+pages={1--6},
+doi={10.1109/QoMEX55416.2022.9900893}
+}
+```

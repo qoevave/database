@@ -1,0 +1,90 @@
+---
+sidebar_position: 5
+custom_edit_url: null 
+---
+
+# Help
+
+Information on content playback. 
+
+## Machine Requirements
+
+For playback at the high-quality video resolution 7680x3840 (8k), your machine must have a capable enough GPU. 
+
+### Tested Systems
+
+#### System A
+
+- OS: Windows 11
+- GPU: RTX 2060
+- CPU: AMD Ryzen 5 3600 6-Core / Intel-i7 
+- Memory: 16.0 GB
+
+#### System B
+
+- OS: Windows 10
+- GPU: RTX 3080 10GB 2.0 PCIe 4.0 Gigabyte
+- CPU: AMD Ryzen 7 5800X AM4
+- Memory: 32 GB DDR4-3200
+
+
+
+## Audiovisual Spatial Alignment{#help-spatialalignment}
+
+:::caution
+
+4th-order Ambionsics .WAV files have a -90° spatial rotation in Yaw. This is to spatially align audio with Unity's projection mapping of 360° images using skyboxes.
+
+Read below for explination.
+:::
+
+### Playback Compatability
+
+Many 360° video players have limitations in either the maximum video resolution, or spatial audio compatability. 
+There are few plug-and-play tools available that will be compatible with both higher-order Ambisonics above 3rd order, and high-resolution video files above 4K.
+
+To render higher-order Ambisonics, many VST plug-ins are available that can be used to decode and render Ambisoncs audio channels independently of the video. 
+See the [SPARTA](https://leomccormack.github.io/sparta-site/) spatial audio real-time applications, or [IEM](https://plugins.iem.at/) Plug-in suite for more information. 
+To render 8K video, the Unity game engine was used in conjuction with the [VideoPlayer](https://docs.unity3d.com/ScriptReference/Video.VideoPlayer.html) component. 
+
+### Using Unity
+
+Unity can be used to send real-time head tracking information to incoming OSC ports of any of the spatial audio plug-ins above, to rotate the Ambisonics audio with respect to head movements. 
+The main draw-back of this approach is that the unwraping of a 360° image to a [Skybox](https://docs.unity3d.com/Manual/skyboxes-using.html) in Unity will cause a +90° shift in Y rotation. 
+As the audio is rendered independently, it is unaware of this shift resulting in audio visual spatial misalignment of 90°.
+
+### Current Implementation
+
+The current solution provided by default is a -90° rotational shift in the **4th-order** Ambisonics audio files. 
+When used in conjuction with Unity and the Unity VideoPlayer component, audio and video will be already correctly alligned. 
+The **1st-order** Ambisonics contained in the YouTube videos do not have this spatial rotation.
+
+To use the 4th-order Ambisoncis with no spatial rotation, re-render the audio files using a Ambisonics scene rotator (see above plug-ins) with a +90° rotation in Yaw. 
+
+## Creating Degradations 
+
+Many studies wish to use databases to investigate the effect of changing paramaters, often representative of the processing or transmission chain, on objective or subjective quality measures. Here's a few examples of how to create degaraded versions of the provided database for both audio and video. 
+
+### Video
+
+Examples of creating video degradations using `FFmpeg`
+
+> Reducing the bit-rate
+
+```
+ffmpeg -i Input_file.mkv -preset slow -c:v hevc -x265-params "pass=1" -b:v 25000k Output_file_Pass1.mp4
+
+ffmpeg -i Input_file.mkv -preset slow -c:v hevc -x265-params "pass=2" -b:v 25000k Output_file_Pass2.mp4
+```
+
+> Reducing the framerate 
+
+```
+ffmpeg -i Input_file_60fps.mp4 c:v libx265 -crf 18 -r 30 Output_file_30fps.mp4
+```
+
+> Reducing the resolution
+
+```
+ffmpeg -i Input_file_7680x3840.mkv -c:v libx265 -crf 1 -vf scale=3840x1920 Output_file_3840x1920.mkv
+```

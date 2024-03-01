@@ -1,0 +1,114 @@
+---
+title: The Cave
+custom_edit_url: null 
+---
+
+import CaveCarouselVariableWidth from '../../src/components/caveCarousel';
+import ReactCompareImage from 'react-compare-image';
+import TextImage from '../../src/components/textImageLeft'
+import TextGIF from '../../src/components/textBehaviorLeft'
+
+import Cave from '/img/cgi/cave/cave_splash.png';
+import Baked from '/img/cgi/cave/cave_bake_splash.png';
+import BatsScriptImg from '/img/cgi/cave/BatSoundScripts.png';
+import CaveBehavior from '/img/cgi/cave/animation_cave_dark.gif';
+
+
+## Scene Overview
+
+### Concept 
+
+The concept of the Cave scene, is to provide a virtual space where users rely more on acoustic cues to localize and navigate through the environment, whilst still providing a plausible visual setting. The main source of light is a lantern that renderers a spotlight, helping users to see walls and obsactles in the dark envrionment. However, audio remains the main modality to help used understand which direction to go. 
+
+### Level Design
+
+The Cave scene scene is designed with a large open space with smaller labyrith-style corridors for users to explore. The scene features two main points-of-interest: a small stream leading to an open underground lake, and a larger opening for light to leak in from the outside world. These two areas are positioned on a lower and upper floor where, were some of the smaller corridors connect the two. 
+
+### Features
+
+<CaveCarouselVariableWidth/>
+
+<br />
+
+### Interactivity & Event Examples
+
+- A lantern: Used to help light the way. 
+- Bats: Animation triggered to fly away once the user enteres a proximity (can be deactivated).
+- Spiders: Animation triggered to play a slow moving an animation when close (can be deactivated). 
+
+### Task Example
+
+- Way-Finding: A walkie-talkie spawns at 1 of 5 potential positions, which must be located based on audio cues.
+
+## Audio
+
+### Main Sources
+
+- Walkie-Talkie playing audio cues throughout the user exploration. 
+- Water stream.
+- Atmos sound and wind from cracks in cave.
+
+:::info Audio Files
+
+Visit the [audio information](./AudioInformation) page to download a comprehensive catalogue on audio files and corresponding assets used for objects. 
+
+:::
+
+### Acoustic Geometry 
+
+- Acoustic geometry of the cave scene[^1].
+- Vertices: 6,116  
+- Triangles: 11,004
+
+![/img/cgi/cave_simplifiedMesh.png](/img/cgi/cave/cave_simplifiedMesh.png)
+
+[^1]: Acoutic Geometry: Sufaces have been removed to be able to 'see inside'. Blue trianagles are for visualization only of upper and lower floors, and obscuring objects. 
+
+
+### Object File Banks
+
+<TextImage
+    description={{
+        title: "batsounds.cs example",
+        content: (
+        <p>
+            For some objects, it's useful to have a bank of different audio files which Unity can then play in a random order. This is good for eliminating repetative sequential playback and reducing any combfiltering effects when mutliple objects are instantiated that playback the same audio. 
+            <br />
+            <br />
+            In this example, we have 15 different audio files for bat sounds, 10 in an idle state, and 5 in an alarmed state. If the User enters in close proximity to the bats, the alarmed state will trigger in addition to an animation in the scene.
+            <br />
+            <br />
+            In our code for batsounds.cs class, we simply grab the associated AudioSource Unity component, and point the selected sound from our file bank to the AudioSource audioClip public variable. 
+        </p>
+        ),
+    }}
+    imagePath={BatsScriptImg}
+    />
+
+## Visual
+
+### Lighting
+
+- 100 Directional lightmaps: 99x 2048x2048px; 1x 1024x1024px (1.03 GB)
+- 1x real-time spotlight (lantern). 
+
+<ReactCompareImage leftImage={Cave} rightImage={Baked}/>
+
+
+## Case-Study
+
+- Timelapse of user pose tracking of 14 subjects in a small-scale case-study. 
+
+<TextGIF
+    description={[
+      "Task: Explore the scene to find the walkie-talkie.",  
+      "X and Z show lateral dimensions in meters, with the size of dots showing Y dimension (virtical height) inside the Unity scene. When drawn, position dots persist as a small dot building an exploration pattern over time.",
+      "Tracking was captured at a rate of 0.2~ms.",
+    ]}
+    imageGif={CaveBehavior}
+/>
+
+
+
+
+

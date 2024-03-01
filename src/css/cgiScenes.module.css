@@ -1,0 +1,105 @@
+/* CSS for TwoColumnComponent using CSS Grid */
+.cgisection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .dummyBackground {
+    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.1), 0 20px 20px 0 rgba(65, 64, 64, 0.1);
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 660px;
+    background-image: linear-gradient(230deg, #cee6da, #fbfffd);
+    z-index: -1; 
+    padding-top: 50px;
+  }
+  
+  [data-theme='dark'] .dummyBackground {
+    background-image: linear-gradient(to bottom right, #303846, #303846);
+  }
+
+  .imgSection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cgiimg{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    height: 350px;
+    width: 430px;
+    object-position: left 40% right 40%;
+    padding-right: 0px;
+    margin-left: -20px;
+  }
+
+  .compimg{
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 40px;
+  }
+  
+  .cgitext {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding-bottom: 20px;
+  }
+  
+  .title {
+    color: #333;
+    font-size: 46px;
+    font-weight: bold;
+    letter-spacing: -2px; /* You can adjust the value */
+  }
+    
+  .description {
+    color: #4d4d4d;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .informationText{
+    max-width: 880px;
+    color: #4d4d4d;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  /* Styling one class specially in dark mode */
+  [data-theme='dark'] .title {
+    color: #f1f1f1;
+  }
+  
+  /* Styling one class specially in dark mode */
+  [data-theme='dark'] .description {
+    color: #f8f8f8;
+  }
+
+  [data-theme='dark'] .informationText {
+    color: #f1f1f1;
+  }
+  
+  .buttonRounder{
+    margin-top: 20px;
+    border-radius: 20px;
+  }
+  
+  
+  
+  
