@@ -87,13 +87,6 @@ const config = {
           },
         ],
       },
-      announcementBar: {
-        id: 'content_update',
-        content: "Content update for new CGI Scenes 🎉 Check out the new CGI Scenes Database of our three audiovisual 6-DoF scenes. Links for the download will be active after the AES conference presentation 27th April ⛩️",
-        backgroundColor: '#f0a681',
-        textColor: '#091E42',
-        isCloseable: false,
-      },
       footer: {
         style: 'dark',
         links: [

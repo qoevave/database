@@ -49,12 +49,6 @@
   max-width: 100%;
 }
 
-@media screen and (max-width: 966px) {
-  .heroBanner {
-    padding: 0rem;
-  }
-}
-
 .heroTagline{
   font-size: 40px;
   word-wrap: break-word;
@@ -100,3 +94,36 @@
   background-color: #303846;
 }
 
+@media screen and (max-width: 966px) {
+  .heroBanner {
+    padding: 5rem;
+  }
+
+  .heroTitle {
+    font-size: 50px;
+  }
+
+  .heroTagline {
+    font-size: 30px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .heroBanner {
+    padding: 2rem;
+    height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroTagline {
+    font-size: 20px;
+  }
+
+  .heroFiller {
+    height: 300px;
+  }
+}

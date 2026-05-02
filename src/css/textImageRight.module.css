@@ -25,4 +25,19 @@
   
   
   /* Add any additional styling as needed */
-  
+  @media screen and (max-width: 450px) {
+    .textWithImageContainer{
+      flex-direction: column;
+    }
+
+    .textColumn{
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .imageColumn{
+      padding-right: 0;
+      padding-bottom: 20px;
+      width: 100%;
+    }
+  }

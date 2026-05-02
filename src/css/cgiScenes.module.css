@@ -9,16 +9,16 @@
     width: 100%;
   }
   
-  .dummyBackground {
-    box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.1), 0 20px 20px 0 rgba(65, 64, 64, 0.1);
-    position: absolute;
-    left: 0;
-    right: 0;
-    height: 660px;
-    background-image: linear-gradient(230deg, #cee6da, #fbfffd);
-    z-index: -1; 
-    padding-top: 50px;
-  }
+/* .dummyBackground {
+  box-shadow: 0 -4px 20px 0 rgba(0, 0, 0, 0.1), 0 20px 20px 0 rgba(65, 64, 64, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 660px;
+  background-image: linear-gradient(230deg, #cee6da, #fbfffd);
+  z-index: -1; 
+  padding-top: 50px;
+} */
   
   [data-theme='dark'] .dummyBackground {
     background-image: linear-gradient(to bottom right, #303846, #303846);
@@ -30,15 +30,25 @@
     justify-content: center;
   }
   
-  .cgiimg{
+  /* .cgiimg{
     margin-top: 10px;
     margin-bottom: 20px;
     object-fit: cover;
     height: 350px;
-    width: 430px;
+    max-width: 430px;
+    width: 100%;
     object-position: left 40% right 40%;
     padding-right: 0px;
     margin-left: -20px;
+  } */
+
+  .cgiimg{
+    margin-top: 10px;
+    width: 100%; 
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
+    margin-left: 40px;
   }
 
   .compimg{
@@ -55,7 +65,7 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    width: 800px;
+    max-width: 800px;
     padding-bottom: 20px;
   }
   
@@ -64,9 +74,11 @@
     font-size: 46px;
     font-weight: bold;
     letter-spacing: -2px; /* You can adjust the value */
+    text-align: center;
   }
     
   .description {
+    max-width: 880px;
     color: #4d4d4d;
     font-size: 16px;
     line-height: 1.5;
@@ -79,6 +91,7 @@
     font-size: 16px;
     line-height: 1.5;
     text-align: center;
+    padding-top: 20px;
   }
   
   /* Styling one class specially in dark mode */
@@ -100,6 +113,44 @@
     border-radius: 20px;
   }
   
+
+@media screen and (max-width: 966px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 14px;
+  }
+
+  .informationText{
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 12px;
+  }
+
+  .informationText{
+    font-size: 12px;
+  }
+
+  .cgiimg{
+    width: 0%;
+    margin-left: 0;
+  }
+
+  .compimg{
+    margin-left: 0;
+  }
+}
   
   
   

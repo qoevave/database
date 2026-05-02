@@ -15,7 +15,7 @@ function TwoColumnComponent({ title, description, imageUrl, information}) {
       </div>  
       <div className={styles.imgSection}>
         <img src={imageUrl} alt={title} className={styles.micimg}/>
-        <GlobeComponent />
+        {/* <GlobeComponent /> */}
       </div>
       <p className={styles.informationText}>{information}</p>
       <div className={styles.buttons}>

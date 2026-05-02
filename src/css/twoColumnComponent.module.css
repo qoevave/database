@@ -38,6 +38,7 @@
   font-size: 46px;
   font-weight: bold;
   letter-spacing: -2px; /* You can adjust the value */
+  text-align: center;
 }
   
 .description {
@@ -53,17 +54,20 @@
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+  padding-top: 20px;
+
 }
 
 .imgSection{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 140px;
+  /* margin-left: 140px; */
 }
 
 .micimg{
-  width: 350px;
+  width: 100%;
+  max-width: 600px;
   border-radius: 15px;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
   }
@@ -90,4 +94,49 @@
   border-radius: 20px;
 }
 
+
+@media screen and (max-width: 966px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 14px;
+  }
+
+  .informationText{
+    font-size: 14px;
+  }
+
+  .micimg{
+    width: 440px;
+  }
+
+  .dummyBackground{
+    height: 720px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 12px;
+  }
+
+  .informationText{
+    font-size: 12px;
+  }
+
+  .micimg{
+    width: 300px;
+  }
+
+  .dummyBackground{
+    height: 680px;
+  }
+}
 

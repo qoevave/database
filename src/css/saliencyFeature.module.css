@@ -6,7 +6,7 @@
   padding-top: 40px;
   padding-bottom: 50px;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .dummyBackground {
@@ -33,20 +33,21 @@
   margin-bottom: 20px;
 }
 
-.saliencytext {
+/* .saliencytext {
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 800px;
   padding-bottom: 20px;
-}
+} */
 
 .title {
   color: #333;
   font-size: 46px;
   font-weight: bold;
   letter-spacing: -2px; /* You can adjust the value */
+  text-align: center;
 }
   
 .description {
@@ -54,6 +55,7 @@
   font-size: 16px;
   line-height: 1.5;
   text-align: center;
+  max-width: 880px;
 }
 
 /* Styling one class specially in dark mode */
@@ -73,3 +75,25 @@
 
 
 
+@media screen and (max-width: 966px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 14px;
+  }
+
+}
+
+
+@media screen and (max-width: 450px) {
+  .title{
+    font-size: 30px;
+  }
+
+  .description{
+    font-size: 12px;
+  }
+
+}
