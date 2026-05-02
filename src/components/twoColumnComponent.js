@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../css/twoColumnComponent.module.css';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import GlobeComponent from './globeFeature.jsx';
+import GlobeComponent from './GlobeFeature.jsx';
 
 function TwoColumnComponent({ title, description, imageUrl, information}) {
   return (
