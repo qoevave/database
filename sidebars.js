@@ -5,10 +5,9 @@ const sidebars = {
       id: 'intro',
       label: 'Home'
     },
-    'about',
     {
       type: 'category',
-      label: '360 Scenes Database',
+      label: '360 Scenes Dataset',
       link: {
         type: 'doc',
         id: 'Scenes/index'
@@ -31,7 +30,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'CGI Scenes Database',
+      label: 'CGI Scenes Dataset',
       link: {
         type: 'doc',
         id: 'CGI/index'
@@ -46,7 +45,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Saliency Database',
+      label: 'Saliency Dataset',
       link: {
         type: 'doc',
         id: 'Saliency/index'

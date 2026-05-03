@@ -9,7 +9,7 @@ const katex = require('rehype-katex');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'QoEVAVE Database',
-  tagline: 'Evaluation Content for Interactive Virtual Environments',
+  tagline: 'DFG SPP 2236 Audictive, Proj. No. 444832250',
   url: 'https://qoevave.github.io/',
   baseUrl: '/database/',
   onBrokenLinks: 'throw',
@@ -70,7 +70,7 @@ const config = {
       },
       algolia:{
         appId: 'JUTY2A3KFT',
-        apiKey: '7d032914ea803f641b18480d98423d87',
+        apiKey: '302f7692d596af223626d5f66166169e',
         indexName: 'qoevaveio',
       },
       navbar: {
