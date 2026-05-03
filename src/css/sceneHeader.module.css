@@ -1,0 +1,75 @@
+/* ---------- SceneHeader: panoramic banner + location strip ---------- */
+
+.header {
+  margin-bottom: 24px;
+  border: 1px solid rgba(91, 131, 113, 0.22);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* ---------- Panoramic image ---------- */
+
+.imageWrap {
+  width: 100%;
+  aspect-ratio: 2.5 / 1;
+  overflow: hidden;
+  background-color: rgba(91, 131, 113, 0.06);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  object-position: center 40%;
+  display: block;
+  padding-top: 10px;
+}
+
+/* ---------- Location strip ---------- */
+
+.locationStrip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  padding: 9px 16px;
+  background-color: rgba(91, 131, 113, 0.03);
+  border-top: 1px solid rgba(91, 131, 113, 0.15);
+}
+
+.locationAddress {
+  font-size: 12.5px;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+.geoTag {
+  font-size: 11.5px;
+  font-family: 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+  color: var(--ifm-color-primary-darker);
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* ---------- Dark mode ---------- */
+
+[data-theme='dark'] .header {
+  border-color: rgba(165, 204, 185, 0.2);
+}
+
+[data-theme='dark'] .imageWrap {
+  background-color: rgba(165, 204, 185, 0.06);
+}
+
+[data-theme='dark'] .locationStrip {
+  background-color: rgba(165, 204, 185, 0.03);
+  border-top-color: rgba(165, 204, 185, 0.15);
+}
+
+[data-theme='dark'] .locationAddress {
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .geoTag {
+  color: var(--ifm-color-primary-lighter);
+}

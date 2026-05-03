@@ -1,0 +1,165 @@
+/* ---------- SceneCard: 16:9 image left, metadata right ---------- */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(91, 131, 113, 0.25);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  background-color: var(--ifm-background-color, #ffffff);
+  transition: box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  border-color: rgba(91, 131, 113, 0.4);
+}
+
+/* ---------- Image (left, locked to 16:9) ---------- */
+
+.imageWrap {
+  flex-shrink: 0;
+  width: 340px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: rgba(91, 131, 113, 0.06);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---------- Content (right) ---------- */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 18px 20px 16px;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+/* ---------- Highlights list ---------- */
+
+.highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.highlights li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--ifm-color-emphasis-800);
+  padding-left: 14px;
+  position: relative;
+}
+
+.highlights li::before {
+  content: "–";
+  position: absolute;
+  left: 0;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+/* ---------- Metadata definition list ---------- */
+
+.metadata {
+  margin: 0;
+  padding: 10px 0 0;
+  border-top: 1px solid rgba(91, 131, 113, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaRow {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.metaLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--ifm-color-primary-darker);
+  white-space: nowrap;
+  flex-shrink: 0;
+  width: 110px;
+}
+
+.metaValue {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+  font-family: 'SF Mono', Menlo, Consolas, 'Courier New', monospace;
+}
+
+/* ---------- Button ---------- */
+
+.buttonRounder {
+  align-self: flex-start;
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 4px 14px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+/* ---------- Responsive ---------- */
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .imageWrap {
+    width: 100%;
+  }
+}
+
+/* ---------- Dark mode ---------- */
+
+[data-theme='dark'] .card {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(165, 204, 185, 0.22);
+}
+
+[data-theme='dark'] .card:hover {
+  border-color: rgba(165, 204, 185, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .imageWrap {
+  background-color: rgba(165, 204, 185, 0.06);
+}
+
+[data-theme='dark'] .highlights li {
+  color: var(--ifm-color-emphasis-700);
+}
+
+[data-theme='dark'] .metadata {
+  border-top-color: rgba(165, 204, 185, 0.18);
+}
+
+[data-theme='dark'] .metaLabel {
+  color: var(--ifm-color-primary-lighter);
+}
+
+[data-theme='dark'] .metaValue {
+  color: var(--ifm-color-emphasis-600);
+}

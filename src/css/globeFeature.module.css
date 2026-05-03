@@ -1,7 +1,0 @@
-/* Define styles for smaller screens */
-@media screen and (max-width: 450px) {
-  .globeimg {
-    width: 100%; /* Set width to 100% for smaller screens */
-    height: auto; /* Maintain aspect ratio */
-  }
-}
