@@ -69,9 +69,9 @@ const config = {
         },
       },
       algolia:{
-        appId: 'JUTY2A3KFT',
-        apiKey: '302f7692d596af223626d5f66166169e',
-        indexName: 'qoevaveio',
+        appId: 'AO2JRUV5OE',
+        apiKey: '3c5bc1ecc63c7952b7ee450aa5a26da5',
+        indexName: 'QoEVAVE database research documentation',
       },
       navbar: {
         title: 'QoEVAVE Database',
