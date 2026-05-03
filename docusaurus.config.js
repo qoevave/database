@@ -71,7 +71,7 @@ const config = {
       algolia:{
         appId: 'AO2JRUV5OE',
         apiKey: '3c5bc1ecc63c7952b7ee450aa5a26da5',
-        indexName: 'QoEVAVE database research documentation',
+        indexName: 'Database crawl',
       },
       navbar: {
         title: 'QoEVAVE Database',
