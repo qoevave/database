@@ -1,119 +1,99 @@
 ---
 sidebar_position: 11
 title: Skateboarding
-custom_edit_url: null 
+custom_edit_url: null
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SceneHeader from '../../src/components/SceneHeader';
+import DocFigure from '../../src/components/DocFigure';
+import img from '../../static/img/globeImgs/skateboarding.png';
 
-import Picture from '../../src/components/globe_components/skateboarding';
-import img from "../../static/img/globeImgs/skateboarding.png";
+A skateboarder recorded on the plaza of Technische Hochschule Nürnberg Georg-Simon-Ohm. The hard tiled surface produces a distinctive impulsive sound source as the skateboard wheels interact with the ground. Versions vary the trajectory of the skateboarder — linear passes versus full 360° circuits — and whether background music from a Bluetooth speaker is present, enabling controlled study of moving sound source salience.
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '4px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+<SceneHeader
+  imageUrl={img}
+  imageAlt="360° equirectangular preview of the Skateboarding scene"
+  location="Keßlerpl. 12, 90489 Nürnberg — Technische Hochschule Nürnberg"
+  geoTag="49.452547, 11.093259"
+/>
 
-
-<Picture background={img}/>
-
-:::note Location...
-
-Keßlerpl. 12, 90489 Nürnberg @ Technische Hochschule Nürnberg Georg-Simon-Ohm <br/>
-:triangular_flag_on_post: GeoTag: 49.45254733966611, 11.093259620870267
-
-:::
-
-## Scene {#about-Skateboarding}
-
-<Tabs className="unique-tabs">
-  <TabItem value="Skateboarding01">
-    <p><b>Scene version</b>: Silence at the beginning. Skateboarder rides from right-to-left and back again. </p>
-    <p><b>Preview Skateboarding01</b> on <a href="https://youtu.be/A9S6hMZra2k">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 60 seconds</p>
+<Tabs>
+  <TabItem value="v01" label="Version 01">
+    <p>Brief silence at the start, followed by a skateboarder riding from right-to-left and back again in a linear pass. No music.</p>
+    <p>Preview on <a href="https://youtu.be/A9S6hMZra2k">YouTube</a> with FAO audio and 8K video · Duration: 60 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_A_ambiX4_24bit.wav">Skateboarding01_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_A_ambiX4_24bit.wav">Skateboarding01_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_V_7680x3840_60fps_60s.mkv">Skateboarding01_V_7680x3840_60fps_60s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding01/Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding01_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Skateboarding01_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Skateboarding01_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for Skateboarding01"
+      label=""
+      title="Skateboarding01"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
-  <TabItem value="Skateboarding03">
-    <p><b>Scene version</b>: Similar to Skateboarding01 but includes music.</p>
-    <p><b>Preview Skateboarding03</b> on <a href="https://youtu.be/KFdToB17wFQ">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 60 seconds</p>
+  <TabItem value="v03" label="Version 03">
+    <p>Linear right-to-left pass, as in Version 01, with background music from a Bluetooth speaker added to the scene.</p>
+    <p>Preview on <a href="https://youtu.be/KFdToB17wFQ">YouTube</a> with FAO audio and 8K video · Duration: 60 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_A_ambiX4_24bit.wav">Skateboarding03_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_A_ambiX4_24bit.wav">Skateboarding03_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_V_7680x3840_60fps_60s.mkv">Skateboarding03_V_7680x3840_60fps_60s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding03/Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding03_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Skateboarding03_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Skateboarding03_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for Skateboarding03"
+      label="Spatial / Temporal Indexing"
+      title="Skateboarding03"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
-  <TabItem value="Skateboarding04">
-    <p><b>Scene version</b>: Silence at the beginning, skateboarder enters and circles the camera with full 360° movements.</p>
-    <p><b>Preview Skateboarding04</b> on <a href="https://youtu.be/MZ-8pMfIj4w">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 60 seconds</p>
+  <TabItem value="v04" label="Version 04">
+    <p>Brief silence at the start, followed by the skateboarder entering and circling the camera in a full 360° circuit. No music.</p>
+    <p>Preview on <a href="https://youtu.be/MZ-8pMfIj4w">YouTube</a> with FAO audio and 8K video · Duration: 60 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_A_ambiX4_24bit.wav">Skateboarding04_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_A_ambiX4_24bit.wav">Skateboarding04_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_V_7680x3840_60fps_60s.mkv">Skateboarding04_V_7680x3840_60fps_60s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding04/Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding04_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Skateboarding04_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Skateboarding04_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for Skateboarding04"
+      label="Spatial / Temporal Indexing"
+      title="Skateboarding04"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
-  <TabItem value="Skateboarding05">
-    <p><b>Scene version</b>: Similar to Skateboarding04 but includes music.</p>
-    <p><b>Preview Skateboarding05</b> on <a href="https://youtu.be/tx1WTywWZVY">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 63 seconds</p>
+  <TabItem value="v05" label="Version 05">
+    <p>Full 360° circuit, as in Version 04, with background music from a Bluetooth speaker added to the scene.</p>
+    <p>Preview on <a href="https://youtu.be/tx1WTywWZVY">YouTube</a> with FAO audio and 8K video · Duration: 63 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_A_ambiX4_24bit.wav">Skateboarding05_A_ambiX4_24bit.wav</a></li>
-      <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_V_7680x3840_60fps_60s.mkv">Skateboarding05_V_7680x3840_60fps_63s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_AV_7680x3840_60fps_60s_25Mbps_ambiX1_24bit.mp4">Skateboarding05_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_A_ambiX4_24bit.wav">Skateboarding05_A_ambiX4_24bit.wav</a></li>
+      <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_V_7680x3840_60fps_63s.mkv">Skateboarding05_V_7680x3840_60fps_63s.mkv</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Skateboarding05/Skateboarding05_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4">Skateboarding05_AV_7680x3840_60fps_63s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Skateboarding05_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Skateboarding05_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for Skateboarding05"
+      label="Spatial / Temporal Indexing"
+      title="Skateboarding05"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
 </Tabs>
-
-<details>
-<summary>
-ℹ️ Naming Conventions
-</summary>
-  <p>4OA Audio: <code>SceneName+Version</code> > <code>A (audio)</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code> </p>
-  <p>8K Video:  <code>SceneName+Version</code> > <code>V (video)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> </p>
-  <p>YouTube:   <code>SceneName+Version</code> > <code>AV (audiovideo)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code></p>
-</details>
-
-<!-- **Composition**: 
-- A single skateboarder riding around an urban city locations at a medium to fast speed.  
-- Audio is produced from the skateboard wheels interacting from the tiled floor. 
-- Versions with an additional bluetooth speaker positioned within the scene is also available.
-- Low number of people.   -->
-
-

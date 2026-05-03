@@ -1,11 +1,15 @@
-# 360 Scene Database
+---
+custom_edit_url: null 
+---
+
+# 360 Scene Dataset
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 ## Overview
 
-The QoEVAVE Scenes Database provides an initial audiovisual database consiting of 12 scenes capturing real-life nature and urban scenes. 
+The QoEVAVE Scenes Database provides an initial audiovisual database consisting of 12 scenes capturing real-life nature and urban scenes. 
 The maximum video resolution is **7680x3840** (8k) at **60 frames-per-second**, with **4th-order Ambisonics spatial audio** (4OA). 
 All video sequences are recorded with a target duration of 60 seconds and designed to represent real-life settings for systematically evaluating various dimensions of uni-/multimodal perception, cognition, behavior, and quality of experience (QoE) in a controlled virtual environment. 
 This database serves as high-quality reference material with an equal focus on auditory and visual sensory information within the QoE community. For more information, please see the [publication](#scenespublication) below.
@@ -17,20 +21,20 @@ You can download individual scenes on each of the available scene pages, or view
 - Location information of recording. 
 - Scene version notes describing variations in multiple 'takes'. 
 - Preview link to YouTube (uses 1st-order Ambisonics).
-- Download links for 4th-audio Ambisonics audio, 8k video file, or muxed audiovideo file with 1st-order Ambisonics. 
+- Download links for 4th-order Ambisonics audio, 8k video file, or muxed audiovideo file with 1st-order Ambisonics. 
 - Spatial / Temporal indexing plots on video data.  
 
 ## Capture
 
 Media | Device | Description 
-:---:|:---:|---
+:---:|:---:|:---
 Audio | mhacoustics [Eigenmike](https://mhacoustics.com/products) | 32 channel spherical microphone array capable of 4th order higher-order ambisonics output.
 Video | [Insta360 Pro 2](https://www.insta360.com/product/insta360-pro2/) | 360 video camera capable of 8K video output. Comprised of 6 F2.4 fisheye lenses each capturing 4K video resolution up to 120Mbps.
 
 ## Specifications
 
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Information &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Description 
-:---:|---
+Information | Description 
+:---:|:---
 Video Encoding | ffvhuff  
 Video Resolution | 7680x3840
 Projection Map | Equirectangular
@@ -38,13 +42,18 @@ Video FPS | 59.94
 Audio Sample-rate | 48,000; 24-bit PCM
 4th-Order Ambisonics | Individual .wav files of 4th-order Ambisonics in ACN channel ordering with SN3D normalization. Scene representation has a -90° rotational offset against video files for playback with Unity. Visit [Help](./help/#help-spatialalignment) for more information. Labelled as `ambiX4` in file names.
 1st-Order Ambisonics | 1st-Order Ambisonics in ACN channel ordering with SN3D normalization. Encoded using AAC and muxed with the video files into an .MP4 container. Pre-processed with Google's [spatial media metadata injector](https://support.google.com/youtube/answer/6395969?hl=en) for uploading to YouTube. Labelled as `ambiX1` in file names.
-Audio Post-production | All audio files are provided with a **500ms fade-in/out**. Further post-processing includes EQ (**60 Hz high-pass** and **10 kHz -3dB notch filter**), Omnidirection-compression for make-up gain (**max +5 dB**), and Ambisonic B-Format scene roation for audiovisual alignment. All post-processing was applied with [IEM](https://plugins.iem.at/) VSTs
+
+Audio post-production — all files are processed with [IEM](https://plugins.iem.at/) VST plugins:
+
+- 500 ms fade-in and fade-out
+- 60 Hz high-pass filter
+- 10 kHz −3 dB notch filter
+- Omnidirectional compression for make-up gain (max +5 dB)
+- Ambisonic B-Format rotation for audiovisual alignment
 
 ## Download{#scenes-download-list}
 
-Download links for all individual scenes can be found on the each scene page. There you can download audio (4OA) video (8K) and the muxed audiovideo files (YouTube 1OA) for any available versions of the scene. Comments are provided to note slight changes in scene composition between any available versions.
-
-Alternatively, you can expand the drop down menu below to see all download links for audio, video, and audiovideo files. 
+Expand the list below to download audio, video, or muxed files for all scenes at once. For scene-specific notes and version history, visit the individual scene pages. 
 
 <details>
 <summary>
@@ -147,14 +156,21 @@ Download list
 </Tabs>
 </details>
 
-## Publication{#scenespublication}
+## File Naming Conventions {#naming-conventions}
 
-When using the QoEVAVE Scenes Database, please cite the following works. 
+Download filenames follow a consistent pattern encoding the key properties of each file.
 
-> Robotham, T., Singla, A., Rummukainen, O. S., Raake, A., Habets, E. A. P. Sept, 2022. 
-***Audiovisual Database with 360° Video and Higher-Order Ambisonics Audio for Perception, Cognition, Behavior, and QoE Evaluation Research***. In Proc, 14th International Conference on Quality of Multimedia Experience (QoMEX). Lippstadt, Germany. DOI: [10.1109/QoMEX55416.2022.9900893](https://ieeexplore.ieee.org/document/9900893)
+| Format | Pattern |
+|--------|---------|
+| 4OA Audio (`.wav`) | `SceneName+Version` · `A` · `AmbisonicsFormat+Order` · `Bit-depth` |
+| 8K Video (`.mkv`) | `SceneName+Version` · `V` · `Resolution` · `FPS` · `Duration` |
+| Muxed AV (`.mp4`) | `SceneName+Version` · `AV` · `Resolution` · `FPS` · `Duration` · `Bitrate` · `AmbisonicsFormat+Order` · `Bit-depth` |
 
-Open access versison available at [arXiv:2212.13442v1](https://arxiv.org/pdf/2212.13442.pdf)
+**Example:** `Badminton01_A_ambiX4_24bit.wav` — Scene `Badminton`, version `01`, audio-only (`A`), 4th-order AmbiX format (`ambiX4`), 24-bit depth.
+
+## Publication {#scenespublication}
+
+When using the QoEVAVE Scenes Database, please cite the following works
 
 ```
 @inproceedings{robotham2022,

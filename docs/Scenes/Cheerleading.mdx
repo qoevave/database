@@ -1,65 +1,43 @@
 ---
 sidebar_position: 4
 title: Cheerleading
-custom_edit_url: null 
+custom_edit_url: null
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SceneHeader from '../../src/components/SceneHeader';
+import DocFigure from '../../src/components/DocFigure';
+import img from '../../static/img/globeImgs/cheerleading.png';
 
-import Picture from '../../src/components/globe_components/cheerleading';
-import img from "../../static/img/globeImgs/cheerleading.png";
+A cheerleading performance recorded at TU Ilmenau. The camera and microphone were positioned at the centre of a triad formation, surrounding the recording position with performers and creating a dense, full 360° audiovisual scene with high source activity across the entire sphere.
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '4px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+<SceneHeader
+  imageUrl={img}
+  imageAlt="360° equirectangular preview of the Cheerleading scene"
+  location="Ehrenbergstraße 51, 98693 Ilmenau — TU Ilmenau"
+  geoTag="50.683329, 10.934882"
+/>
 
-<Picture background={img}/>
 
-:::note Location...
-
-Ehrenbergstraße 51, 98693 Ilmenau @ TU Ilmenau <br/> 
-:triangular_flag_on_post: GeoTag: 50.6833299650947, 10.934882059027556
-
-:::
-
-## Scene {#about-Cheerleading}
-
-<Tabs className="unique-tabs">
-  <TabItem value="Cheerleading01">
-    <p><b>Scene version</b>: Triad formation of cheerleaders surrounding the camera and microphone position creating full 360° activity.</p>
-    <p><b>Preview Cheerleading01</b> on <a href="https://youtu.be/WwyuEN_5CdU">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 68 seconds</p>
+<Tabs>
+  <TabItem value="v01" label="Version 01">
+    <p>Triad formation of cheerleaders surrounding the camera and microphone position, producing full 360° activity throughout the recording.</p>
+    <p>Preview on <a href="https://youtu.be/WwyuEN_5CdU">YouTube</a> with FAO audio and 8K video · Duration: 68 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_A_ambiX4_24bit.wav">Cheerleading01_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_A_ambiX4_24bit.wav">Cheerleading01_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/CheerLeading01_V_7680x3840_60fps_68s.mkv">CheerLeading01_V_7680x3840_60fps_68s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4">Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Cheerleading01/Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4">Cheerleading01_AV_7680x3840_60fps_68s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/CheerLeading01_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/CheerLeading01_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for Cheerleading01"
+      label=""
+      title="Cheerleading01"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
 </Tabs>
-
-
-<details>
-<summary>
-ℹ️ Naming Conventions
-</summary>
-  <p>4OA Audio: <code>SceneName+Version</code> > <code>A (audio)</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code> </p>
-  <p>8K Video:  <code>SceneName+Version</code> > <code>V (video)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> </p>
-  <p>YouTube:   <code>SceneName+Version</code> > <code>AV (audiovideo)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code></p>
-</details>
-
-

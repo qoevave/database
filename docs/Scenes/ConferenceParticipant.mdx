@@ -1,78 +1,61 @@
 ---
 sidebar_position: 6
 title: ConferenceParticpant
-custom_edit_url: null 
+custom_edit_url: null
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import SceneHeader from '../../src/components/SceneHeader';
+import DocFigure from '../../src/components/DocFigure';
+import img from '../../static/img/globeImgs/conferenceParticipant.png';
 
-import Picture from '../../src/components/globe_components/conferenceParticipant';
-import img from "../../static/img/globeImgs/conferenceParticipant.png";
+A meeting recorded from a participant perspective at the Fraunhofer Institute for Integrated Circuits IIS, Erlangen. The camera and microphone were positioned at the table alongside other participants. Versions vary the position of the window blinds, producing controlled differences in ambient lighting and visual spatial complexity.
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '4px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>
-    {children}
-  </span>
-);
+<SceneHeader
+  imageUrl={img}
+  imageAlt="360° equirectangular preview of the ConferenceParticipant scene"
+  location="Am Wolfsmantel 33, 91058 Erlangen — Fraunhofer IIS"
+  geoTag="49.546535, 11.017628"
+/>
 
-<Picture background={img}/>
-
-:::note Location...
-
-Am Wolfsmantel 33, 91058 Erlangen @ Fraunhofer Institute for Integrated Circuits IIS <br/>
-:triangular_flag_on_post: GeoTag: 49.546535298811065, 11.01762849795726
-
-:::
-
-## Scene {#about-ConferenceParticipant}
-
-<Tabs className="unique-tabs">
-  <TabItem value="ConferenceParticipant02">
-    <p><b>Scene version</b>: Blinds down.</p>
-    <p><b>Preview ConferenceParticipant02</b> on <a href="https://youtu.be/3uNruN6TAfg">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 80 seconds</p>
+<Tabs>
+  <TabItem value="v02" label="Version 02">
+    <p>Blinds closed — lower ambient light and reduced visual spatial complexity from the windows.</p>
+    <p>Preview on <a href="https://youtu.be/3uNruN6TAfg">YouTube</a> with FAO audio and 8K video · Duration: 80 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_A_ambiX4_24bit.wav">Conference02_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_A_ambiX4_24bit.wav">Conference02_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_V_7680x3840_60fps_80s.mkv">Conference02_V_7680x3840_60fps_80s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4">Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference02/Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4">Conference02_AV_7680x3840_60fps_80s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Conference02_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Conference02_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for ConferenceParticipant02"
+      label=""
+      title="ConferenceParticipant02"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
-  <TabItem value="ConferenceParticipant03">
-    <p><b>Scene version</b>: Blinds up.</p>
-    <p><b>Preview ConferenceParticipant03</b> on <a href="https://youtu.be/AP9MCs8Xl6Q">YouTube</a> with FAO audio and 8K video. </p>
-    <p><b>Duration</b>: 83 seconds</p>
+  <TabItem value="v03" label="Version 03">
+    <p>Blinds open — full ambient daylight with higher visual spatial complexity from the window view.</p>
+    <p>Preview on <a href="https://youtu.be/AP9MCs8Xl6Q">YouTube</a> with FAO audio and 8K video · Duration: 83 s</p><br/>
     <h3>Download</h3>
     <ul>
-      <li>4OA Audio <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_A_ambiX4_24bit.wav">Conference03_A_ambiX4_24bit.wav</a></li>
+      <li>4OA Audio: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_A_ambiX4_24bit.wav">Conference03_A_ambiX4_24bit.wav</a></li>
       <li>8K Video: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_V_7680x3840_60fps_83s.mkv">Conference03_V_7680x3840_60fps_83s.mkv</a></li>
-      <li>YouTube: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4">Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4</a></li>
+      <li>Muxed AV: <a href="https://avtshare01.rz.tu-ilmenau.de/QoEvaVE_Database/Conference03/Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4">Conference03_AV_7680x3840_60fps_83s_25Mbps_ambiX1_24bit.mp4</a></li>
     </ul>
-    <h3>Spatial / Temporal Indexing </h3>
-    <ul>
-      <li>Left: SI x TI matrix, Right: SI and TI data over time.</li>
-    </ul>
-    <img src={require('../../static/img/sitiPlots/Conference03_separate.png').default} alt="alt text" title="image Title" width="900" height="300"/>
+    <DocFigure
+      layout="stacked"
+      imagePath={require('../../static/img/sitiPlots/Conference03_separate.png').default}
+      imageAlt="SI×TI scatter matrix and time-series plot for ConferenceParticipant03"
+      label=""
+      title="ConferenceParticipant03"
+    >
+      Spatial Information (SI) quantifies the spatial detail in each frame; Temporal Information (TI) measures frame-to-frame change. Left: SI×TI scatter across all frames. Right: SI and TI values over time.
+    </DocFigure>
   </TabItem>
 </Tabs>
-
-<details>
-<summary>
-ℹ️ Naming Conventions
-</summary>
-  <p>4OA Audio: <code>SceneName+Version</code> > <code>A (audio)</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code> </p>
-  <p>8K Video:  <code>SceneName+Version</code> > <code>V (video)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> </p>
-  <p>YouTube:   <code>SceneName+Version</code> > <code>AV (audiovideo)</code> > <code>Resolution</code> > <code>Frames-per-second</code> > <code>Duration</code> > <code>AmbisonicsFormat+Order</code> > <code>Bit-depth</code></p>
-</details>
